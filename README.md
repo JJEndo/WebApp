@@ -1,1 +1,2 @@
-# Proyecto web_eq_proyecto_1
+# Development of a web application
+Developed a web application allowing users to upload, manage, and share multimedia content, such as short films and portfolios, tailored for video editors, graphic designers, and actors. The platform features a user management system, dynamic frontend built with HTML, CSS, and JavaScript, and a robust backend using Java, with a MySQL database for data storage. It provides an intuitive, secure environment for users to access or share content, offering both public and private options through registration
