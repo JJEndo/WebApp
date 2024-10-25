@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equus Quagga</title>
+    <link rel="stylesheet" type="text/css" href="css/crearCuenta.css"> <!--Vinculamos la hoja de estilo de css-->
+    <link rel="shortcut icon" type="image/jpg/png" href="img/index/logo_icon.png" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conectamos con la webfonts de Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet"> <!-- Cargamos el archivo topográfico para que sea utilizada en la web -->
+    <meta name="keywords" content="AACC, altas capacidades, documental, superdotadción" />
+    <meta name="description" content="Reconocer, apoyar y potenciar las altas capacidades de los niños"/>
+    <meta name="author" content="Jonathan Endo" />
+    <meta name="theme-color" content="#000" />
+    <script>
+		
+		window.onload = function() {
+    const id = getParameterByName("id");
+    const op = getParameterByName("op");
+    console.log(`Parámetros obtenidos de la URL: id=${id}, op=${op}`);
+    if (id && op) {
+        llamada(id, op);
+    } else {
+        console.log('ID y/o OP no encontrados en la URL');
+    }
+};
+
+function llamada(id, op) {
+    console.log(`Llamada a fetch con id=${id} y op=${op}`);
+    fetch(`/web_eq_proyecto1/FormUsuarios?id=${id}&op=${op}`)
+        .then(response => {
+            console.log('Respuesta recibida', response);
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos recibidos del servidor', data);
+            pintarFormulario(data);
+        })
+        .catch(error => console.error('Error fetching data', error));
+}
+
+function getParameterByName(name) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(location.search);
+    return results ? decodeURIComponent(results[2].replace(/\+/g, " ")) : null;
+}
+
+function pintarFormulario(datos) {
+    if (datos) {
+        document.getElementById("id").value = datos.id || '';
+        document.getElementById("nombre").value = datos.nombre || '';
+        document.getElementById("email").value = datos.email || '';
+        document.getElementById("permiso").value = datos.permiso || '';
+    } else {
+        console.error('Datos no encontrados o inválidos');
+    }
+}
+	</script>
+</head>
+<body>
+
+    <div class="form-wrapper">
+        <div class="form-side">
+            <a href="./index.html" title="Logo">
+                <img class="logo" src="img/eqLogo.png" alt="Logo">
+            </a>
+            <form class="my-form" name="formularioUsuario" action="FormUsuarios" method="post" id="altas">
+                <input type="hidden" id="id" name="id">
+                <div class="login-welcome-row">
+                    <h1>Crea la cuenta del usuario&#x1F44F;</h1>
+                </div>
+                 <div class="text-field">
+                    <label for="nombre">Nombre:
+                        <input type="text" id="nombre" name="nombre" autocomplete="off" placeholder="Nombre" required>                   
+                    </label>
+                </div>
+                <div class="text-field">
+                    <label for="email">Correo electrónico:
+                        <input type="email" id="email" name="email" autocomplete="off" placeholder="E-mail" required>
+                    </label>
+                </div>
+                <div class="text-field">
+				    <label for="permiso">Nivel de permiso:</label>
+				    <select id="permiso" name="permiso">
+						
+				        <option value="" disabled selected>Selecciona una opción</option>
+				        <option value="1">Usuario registrado</option>
+				        <option value="9">Usuario administrador</option>
+				    </select>
+                </div>
+        
+                <button class="my-form__button" type="submit">
+                    Registrar
+                </button>
+
+                </div>
+            </form>
+        </div>
+        <div class="info-side">
+            <img src="img/eqLogo.png" alt="Eq" class="eqLogo" />
+            <div class="welcome-message">
+                <h2>Navitron Maps! 👋</h2>
+                <p>
+                    Your ultimate guide to navigating the world
+                    and discovering new places with ease.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

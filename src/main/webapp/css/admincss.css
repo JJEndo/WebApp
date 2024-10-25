@@ -1,0 +1,55 @@
+:root { /*Creamos variables para los colores*/
+	--primary-color: #f3e37c;
+	--primary-color-dark: #f3d34a;
+	--secondary-color: #fcf5c7;
+	--secondary-color-dark: #adf7b6;
+	--gray-color: #ccc;
+	--gray-color-dark: #333;
+}
+
+* {
+	margin: 0;
+	/*reseteamos para que el navegador no nos poga ninguno por defecto*/
+	padding: 0;
+	/*reseteamos para que el navegador no nos poga ninguno por defecto*/
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+	/* Tipografía de letra de toda la página */
+}
+
+#container {
+	max-width: 1200px;
+	margin: 0 auto; /* Centramos el container*/
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.button {
+	display: inline-flex; /* Hace que se alineen los elementos (verticalmente) del botón a la misma altura en el centro */
+	width: 200px;
+	margin: 10px auto;
+	padding: 7px 10px;
+	background-color: #007BFF;
+	color: #fff;
+	border-radius: 4px;
+	transition: background-color 0.3s;
+	align-items: center; /* Alineamos horizontalmente el texto y la imagen en el centro del botón */
+    background: transparent; /* Hacemos que no tenga color el botón y que por defecto sea negro como el fondo */
+    border: 1px solid var(--primary-color-dark); /* Ahora el botón aunque es transparente tiene un borde que lo delimita */
+    color: var(--primary-color-dark);
+    background-color: var(--gray-color-dark);
+}
+
+.button:hover {
+	background-color: #0056b3;
+}

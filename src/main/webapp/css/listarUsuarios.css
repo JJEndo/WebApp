@@ -1,0 +1,351 @@
+:root{ /*Creamos variables para los colores*/
+    --primary-color: #f3e37c;
+    --primary-color-dark: #f3d34a;
+    --secondary-color: #fcf5c7;
+    --secondary-color-dark: #adf7b6;
+    --gray-color: #ccc;
+    --gray-color-dark:#333;
+}
+
+*{
+    margin: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    padding: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    box-sizing: border-box; 
+    font-family: "Open Sans", sans-serif; /* Tipografía de letra de toda la página */
+}
+
+/*
+body {
+    background-color: black; /* Color del fondo negro*/
+    /*color: white;  /* Color de las letras blanco *
+}  
+*/
+
+#container{
+    max-width: 1200px;
+    margin: 0 auto; /* Centramos el container*/
+    width: 100%;
+    height:  auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+}   
+
+/* --------------------------------------- EL HEADER----------------------------------------------------------- */
+
+.brand_logo{
+    width: 150px;
+    cursor: pointer; /* El ratón se vuelve una mano indicando que al pinchar en el logo te lleva a un link */
+    margin: 0;
+}
+
+ 
+header{
+    width: 100%;
+    /*height: 100vh; /* Utilizo vh para que sea una página más responsive */
+    /* Añadimos la imagen pero con un poco de transparencia. Normalmente linear-gradient se usa para ir de un color
+    a otro (de arriba a abajo si se deja por defecto) y hacer una transición. Aquí usamos rgba que es como el código
+    de color rgb, pero la "a" (alpha) es la opacidad que va de 1 (opaco) a 0 (transparente). Con esto hago que la
+    imagen sea un poco transparente y más oscura, ya que en rgb (0,0,0) significa negro */
+    position: relative; 
+    background-image: /*linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.6)),*/ url(/Proyecto/img/header.jpg); 
+    background-size: cover; /* Hace que se guarde la escala que tiene por defecto la imagen y su relación aspecto intrínseca */
+    background-position: center; /* Centramos la imagen */
+    padding: 10px 8%; /* Para arriba y abajo 10px y para derecha e izquierda 8% */
+    
+}
+
+
+.navbar{
+    display: flex; /* Hago que el contenido del nav sea horizontal en vez de vertical ajustándolas */
+    align-items: center; /* El contenido de las flexbox se centra */
+    /* El logo pasa a estar a la izquierda y los botones a la derecha porque hay un espacio entre ellos, ya que el logo
+    es un elemento y los botones como están en el mismo div, son otro elemento conjunto*/
+    justify-content: space-between;
+    padding: 10px 0; /* Para arriba y abajo 10px y para derecha e izquierda 0% */
+}
+
+
+.navbar_nav_items{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.nav_item {
+    position: relative;
+    display: inline-block;
+}
+
+.signin_button{
+    display: inline-flex; /* Hace que se alineen los elementos (verticalmente) del botón a la misma altura en el centro */
+    align-items: center; /* Alineamos horizontalmente el texto y la imagen en el centro del botón */
+    background: transparent; /* Hacemos que no tenga color el botón y que por defecto sea negro como el fondo */
+    border: 1px solid var(--primary-color-dark); /* Ahora el botón aunque es transparente tiene un borde que lo delimita */
+    padding: 7px 10px;
+    color: var(--primary-color-dark);
+    background-color: var(--gray-color-dark);
+}
+
+nav button{
+    border: 0;
+    outline: 0;
+    /*background: rgb(219, 0, 1); /* Color de los botones */
+    color: white; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold;
+    border-radius: 4px; /* Redondea las esquinas para que sean cuadrados redondeados */
+    padding: 7px 20px;
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer;
+} 
+
+/* -------------------------------- EL CONTENIDO---------------------------------------------------- */
+
+#videoPlayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:30px auto 5px;
+    width: 75%;
+}
+
+.botonesPlayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+}
+
+#botonPlayPause{
+    border: 0;
+    outline: 0;
+    color: #0c0f0a; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold;
+    border: 1px solid var(--primary-color-dark);
+    border-radius: 4px; /* Redondea las esquinas para que sean cuadrados redondeados */
+    padding: 7px 20px;
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer;
+}
+
+#botonMute{
+    border: 0;
+    outline: 0;
+    color: #0c0f0a; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold;
+    border: 1px solid var(--primary-color-dark);
+    border-radius: 4px; /* Redondea las esquinas para que sean cuadrados redondeados */
+    padding: 7px 20px;
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer;
+   
+} 
+
+.contenido{
+    flex: 1 1 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.contenido h1{
+    font-size: 60px;
+    font-weight: 600;
+    /* max-width: 650px; Hace que la letra no pueda ser más ancha que el valor establecido: 650px */
+    line-height: 100px; /* Establece la distancia de los otros textos */
+    text-shadow: 2px 2px 5px #ccc; /*2 px de distancia y 5 de difuminación y gris claro*/
+    color: var(--primary-color-dark);
+
+}
+
+.text-secondary{
+    color: #0c0f0a;
+}
+
+.contenido h3 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.entrada-mail{
+    /* width: auto; */
+    background: white;
+    /* display: flex;  */
+    /* flex-direction: column; */
+    align-content: center;
+    border-radius: 4px;
+    align-items: center;
+    margin: 30px 250px;
+    overflow: hidden; /* Cuando escribes el mail y es muy largo, te deja seguir escribiendo pero dejas de ver las primeras letras a medida que escribes */
+    line-height: 1.5;
+    border: 1px solid var(--primary-color-dark);
+}
+
+.entrada-mail input{
+    /*flex: 1; /* Esto hace que crezca a medida que se amplia la ventana, es para el diseño responsive */
+    border: 0;
+    outline: 0;
+    margin: 0;
+}
+.entrada-mail button {
+
+    background-color: var(--primary-color-dark);
+    border: 0;
+    outline: 0;
+    color: #0c0f0a;
+    font-size: 15px;
+    font: bolder;
+    padding: 15px 30px; /* Centramos el texto */
+    cursor: pointer;
+}
+
+.registrar{
+    display: flex; /* Hace que se alineen los elementos (verticalmente) del botón a la misma altura en el centro */
+    align-items: center; /* Alineamos horizontalmente el texto y la imagen en el centro del botón */
+    background: transparent; /* Hacemos que no tenga color el botón y que por defecto sea negro como el fondo */
+    border: 1px solid var(--primary-color-dark); /* Ahora el botón aunque es transparente tiene un borde que lo delimita */
+    padding: 7px 10px;
+    color: var(--primary-color-dark);
+    background-color: var(--gray-color-dark);
+}
+
+.listaTabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.listaTabla th, .listaTabla td {
+    border: 1px solid var(--gray-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.listaTabla th {
+    background-color: var(--primary-color);
+}
+
+.listaTabla tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+.listaTabla tr:hover {
+    background-color: var(--primary-color-dark);
+    color: white;
+}
+
+.btn-editar, .btn-borrar {
+    color: var(--gray-color-dark);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.btn-editar:hover, .btn-borrar:hover {
+    text-decoration: underline;
+}
+
+
+/* --------------------------------FOOTER--------------------------------------------------------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    width: auto;
+    padding: 50px 15% 10px;
+    border-top: 2px solid #333;
+    color: #777;
+    margin-top: 50px;
+}
+
+
+footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+} 
+
+footer .columna{
+    flex-basis: 25%; /* Determinamos el tamaño de la caja de contenidos en un 25% cada columna, haciendo que se pongan de forma horizontal repartiéndose entre las cuatro el espacio */
+    flex-grow: 1
+}
+
+footer .columna a{
+    display: block; 
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+footer .columna a:hover {
+    text-decoration: underline;
+}
+.fila{
+    display: flex ;
+    align-items: flex-start; /* Así todos los elementos empiezan desde el mismo punto y no están centrados en su propia flexbox */
+    padding: 10px 0;
+} 
+/* texto-copyright{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+} */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar_nav_items {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenido h1 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .entrada-mail {
+        margin: 20px;
+    }
+
+    .listaTabla {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .listaTabla th, .listaTabla td {
+        padding: 8px;
+    }
+
+    footer {
+        padding: 20px 5%;
+    }
+
+    footer .columna {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    .fila {
+        flex-direction: column;
+        align-items: center;
+    }
+}

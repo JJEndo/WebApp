@@ -1,0 +1,120 @@
+:root { 
+    --primary-color: #f3e37c;
+    --primary-color-dark: #f3d34a;
+    --secondary-color: #fcf5c7;
+    --secondary-color-dark: #adf7b6;
+    --gray-color: #ccc;
+    --gray-color-dark: #333;
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: "Open Sans", sans-serif;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand_logo {
+    width: 150px;
+    cursor: pointer;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-image: url(/Proyecto/img/header.jpg); 
+    background-size: cover;
+    background-position: center; 
+    padding: 10px 8%; 
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0; 
+}
+
+.navbar_nav_items {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_item {
+    position: relative;
+    display: inline-block;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+.listaTabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.listaTabla thead tr {
+    background-color: var(--primary-color);
+    color: var(--gray-color-dark);
+    text-align: left;
+    font-weight: bold;
+}
+
+.listaTabla th, .listaTabla td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.listaTabla tbody tr:nth-of-type(even) {
+    background-color: var(--gray-color);
+}
+
+.listaTabla tbody tr:hover {
+    background-color: var(--primary-color-dark);
+    color: #ffffff;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    padding: 50px 15%;
+    border-top: 2px solid #333;
+    color: #777;
+}
+
+footer .links ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .links ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer .links ul li a {
+    color: #777;
+    text-decoration: none;
+}
+
+footer .links ul li a:hover {
+    text-decoration: underline;
+}
+

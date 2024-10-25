@@ -1,0 +1,267 @@
+:root{ /*Creamos variables para los colores*/
+    --primary-color: #f3e37c;
+    --primary-color-dark: #f3d34a;
+    --secondary-color: #fcf5c7;
+    --secondary-color-dark: #adf7b6;
+    --gray-color: #ccc;
+    --gray-color-dark:#333;
+}
+
+*{
+    margin: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    padding: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+    font-family: "Open Sans", sans-serif; /* Tipografía de letra de toda la página */
+}
+
+#container{
+    max-width: 1200px; /* Establecemos un ancho máximo para el container */
+    margin: 0 auto; /* Centramos el container*/
+    width: 100%; /* Ancho completo del container */
+    height:  auto; /* Altura automática basada en el contenido */
+    display: flex; /* Utilizamos flexbox para el layout */
+    flex-wrap: wrap; 
+    flex-direction: column;/* Dirección de los elementos en columna */
+    justify-content: space-around; /* Espaciamos uniformemente los elementos hijos */
+    align-items: center; /* Centramos los elementos hijos horizontalmente */
+    align-content: center; /* Centramos el contenido de los elementos flex */
+
+}   
+
+/* --------------------------------------- EL HEADER----------------------------------------------------------- */
+
+.brand_logo{
+    width: 150px; /* Ancho del logo */
+    cursor: pointer; /* El ratón se vuelve una mano indicando que al pinchar en el logo te lleva a un link */
+    margin: 0; /* Sin margen alrededor del logo */
+}
+
+header{
+    width: 100%; /* Ancho completo del header */
+    position: relative;  /* Posición relativa para elementos posicionales dentro del header */
+    background-image: /*linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.6)),*/ url('/img/header.jpg'); 
+    background-size: cover; /* Hace que se guarde la escala que tiene por defecto la imagen y su relación aspecto intrínseca */
+    background-position: center; /* Centramos la imagen */
+    padding: 10px 8%; /* Para arriba y abajo 10px y para derecha e izquierda 8% */
+    
+}
+
+
+.navbar{
+    display: flex; /* Hago que el contenido del nav sea horizontal en vez de vertical ajustándolas */
+    align-items: center; /* El contenido de las flexbox se centra */
+    /* El logo pasa a estar a la izquierda y los botones a la derecha porque hay un espacio entre ellos, ya que el logo
+    es un elemento y los botones como están en el mismo div, son otro elemento conjunto*/
+    justify-content: space-between;
+    padding: 10px 0; /* Para arriba y abajo 10px y para derecha e izquierda 0% */
+}
+
+
+.navbar_nav_items{
+    display: flex; /* Flexbox para los elementos del menú */
+    justify-content: space-around; /* Espacio alrededor de los elementos del menú */
+    margin: 0; /* Sin margen alrededor del contenedor del menú */
+}
+
+.nav_item {
+    position: relative; /* Posición relativa para elementos posicionales dentro del item */
+    display: inline-block;
+}
+
+.signin_button{
+    display: inline-flex; /* Hace que se alineen los elementos (verticalmente) del botón a la misma altura en el centro */
+    align-items: center; /* Alineamos horizontalmente el texto y la imagen en el centro del botón */
+    background: transparent; /* Hacemos que no tenga color el botón y que por defecto sea negro como el fondo */
+    border: 1px solid var(--primary-color-dark); /* Ahora el botón aunque es transparente tiene un borde que lo delimita */
+    padding: 7px 10px; /* Padding de 7px arriba y abajo, 10px a los lados */
+    color: var(--primary-color-dark); /* Color del texto con color primario oscuro */
+    background-color: var(--gray-color-dark); /* Fondo con color gris oscuro */
+}
+
+nav button{
+    border: 0; /* Sin borde */
+    outline: 0; /* Sin contorno */
+    color: white; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold; /* Fuente en negrita */
+    border-radius: 4px; /* Esquinas redondeadas */
+    padding: 7px 20px;  /* Padding de 7px arriba y abajo, 20px a los lados */
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer; /* El cursor se convierte en una mano al pasar sobre el botón */
+} 
+
+/* -------------------------------- EL CONTENIDO---------------------------------------------------- */
+
+#videoPlayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:30px auto 5px;
+    width: 75%;
+}
+
+.botonesPlayer{
+    display: flex; /* Flexbox para el layout de los botones del reproductor */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio de 20px entre los botones */
+    margin: 0; /* Sin margen alrededor del contenedor de los botones */
+}
+
+#botonPlayPause{
+    border: 0;
+    outline: 0;
+    color: #0c0f0a; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold;
+    border: 1px solid var(--primary-color-dark); /* Borde con color primario oscuro */
+    border-radius: 4px; /* Esquinas redondeadas */
+    padding: 7px 20px;
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer;
+}
+
+#botonMute{
+    border: 0;
+    outline: 0;
+    color: #0c0f0a; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold;
+    border: 1px solid var(--primary-color-dark);
+    border-radius: 4px; /* Redondea las esquinas para que sean cuadrados redondeados */
+    padding: 7px 20px;
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer;
+   
+} 
+
+.contenido{
+    flex: 1 1 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.contenido h1{
+    font-size: 60px;
+    font-weight: 600;
+    /* max-width: 650px; Hace que la letra no pueda ser más ancha que el valor establecido: 650px */
+    line-height: 100px; /* Establece la distancia de los otros textos */
+    text-shadow: 2px 2px 5px #ccc; /*2 px de distancia y 5 de difuminación y gris claro*/
+    color: var(--primary-color-dark); /* Color del texto con color primario oscuro */
+
+}
+
+.text-secondary{
+    color: #0c0f0a;
+}
+
+.contenido h3 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.registrar{
+    display: flex; /* Hace que se alineen los elementos (verticalmente) del botón a la misma altura en el centro */
+    flex-direction: column;
+    align-items: center; /* Alineamos horizontalmente el texto y la imagen en el centro del botón */
+    padding: 7px 10px;
+    color: var(--primary-color-dark);  /* Color del texto con color primario oscuro */
+    border-radius: 4px; /* Esquinas redondeadas */
+}
+
+/* --------------------------------FOOTER--------------------------------------------------------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    width: auto;
+    padding: 50px 15% 10px;
+    border-top: 2px solid #333;
+    color: #777;
+    margin-top: 50px;
+}
+
+
+footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+} 
+
+footer .columna{
+    flex-basis: 25%; /* Determinamos el tamaño de la caja de contenidos en un 25% cada columna, haciendo que se pongan de forma horizontal repartiéndose entre las cuatro el espacio */
+    flex-grow: 1
+}
+
+footer .columna a{
+    display: block; 
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+footer .columna a:hover {
+    text-decoration: underline; /* Subrayar el enlace al pasar el cursor */
+}
+.fila{
+    display: flex ;
+    align-items: flex-start; /* Así todos los elementos empiezan desde el mismo punto y no están centrados en su propia flexbox */
+    padding: 10px 0;
+} 
+
+
+/* Media Queries para Responsiveness */
+@media (max-width: 768px) {
+    .navbar_nav_items {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center;
+    }
+    
+    .contenido h1 {
+        font-size: 32px; /* Reducir tamaño de fuente a 32px */
+    }
+    
+    .contenido h3 {
+        font-size: 16px; /* Reducir tamaño de fuente a 16px */
+        padding: 0 20px;
+    }
+    
+    .botonesPlayer {
+        flex-direction: column;
+    }
+    
+    footer .fila {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer .columna {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand_logo {
+        width: 100px;
+    }
+
+    .signin_button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    #videoPlayer {
+        width: 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equus Quagga</title>
+<link rel="stylesheet" type="text/css" href="css/cuenta.css">
+<!--Vinculamos la hoja de estilo de css-->
+<link rel="shortcut icon" type="image/jpg/png" href="img/logo_icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Conectamos con la webfonts de Google -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap"
+	rel="stylesheet">
+<!-- Cargamos el archivo topográfico para que sea utilizada en la web -->
+<meta name="keywords"
+	content="AACC, altas capacidades, documental, superdotadción" />
+<meta name="description"
+	content="Reconocer, apoyar y potenciar las altas capacidades de los niños" />
+<meta name="author" content="Jonathan Endo" />
+<meta name="theme-color" content="#000" />
+<script src="css/cuenta.css"></script>
+</head>
+<body>
+
+	<div id="contenidoCuenta">
+
+		<main>
+
+			<form class="myForm" name="login" action="Login" method="post">
+
+				<div class="loginWelcomeRow">
+					<a href="index.html" title="Logo"> <img src="img/eqLogo.png"
+						alt="logo" class="logo">
+
+					</a>
+					<H1>¡Bienvenido de nuevo!</H1>
+					<p>Por favor, introduce tus credenciales.</p>
+				</div>
+				<div class="inputWrapper">
+					<input type="email" id="email" name="email" class="inputField"
+						placeholder="Tu e-mail" required autocomplete="off"> <label
+						for="email" class="inputLabel"> Correo electrónico: </label>
+				</div>
+
+				<div class="inputWrapper">
+					<input id="password" name="pass" type="password" class="inputField"
+						placeholder="Tu Contraseña"
+						title="Minimo 6 caracteres, almenos numero"
+						pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required
+						autocomplete="off"> <label for="password"
+						class="inputLabel"> Contraseña: </label>
+
+				</div>
+				<button type="submit" class="myFormButton">Iniciar sesión</button>
+
+				<div class="socialRow">
+					<a href="#" title="Use Google"> <img src="img/google.png"
+						alt="Google"> Entra con tu cuenta de Google
+					</a>
+				</div>
+				<div class="myFormActions">
+					<div class="myFormRow">
+						<span>¿Todavía no tienes una cuenta?</span> <a
+							href="crearCuenta.html" title="Crear Cuenta"> Registrate </a>
+					</div>
+				</div>
+			</form>
+		</main>
+
+		<footer>
+			<p>¿Dudas? Escribe a info@eq.com</p>
+			<div class="links">
+				<ul>
+					<li><a href="#">Preguntas frecuentes</a></li>
+					<li><a href="#">Centro de ayuda</a></li>
+					<li><a href="/terminos-de-uso.html">Términos de uso</a></li>
+					<li><a href="/privacidad.html">Privacidad</a></li>
+					<li><a href="#">Preferencias de cookies</a></li>
+					<li><a href="/info-corporativa.html">Información
+							corporativa</a></li>
+				</ul>
+			</div>
+			<p>&copy; 2024 Equus Quagga</p>
+		</footer>
+
+	</div>
+
+</body>
+</html>

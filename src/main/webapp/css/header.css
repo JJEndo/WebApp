@@ -1,0 +1,15 @@
+.navbar{
+    display: flex; /* Hago que el contenido del nav sea horizontal en vez de vertical ajustándolas */
+    width: 100%;
+    margin: 20px 0;
+    align-items: center; /* El contenido de las flexbox se centra */
+    /* El logo pasa a estar a la izquierda y los botones a la derecha porque hay un espacio entre ellos, ya que el logo
+    es un elemento y los botones como están en el mismo div, son otro elemento conjunto*/
+    justify-content: space-between;
+    padding: 10px 0; /* Para arriba y abajo 10px y para derecha e izquierda 0% */
+}
+
+.logo{
+    width: 150px;
+    cursor: pointer; /* El ratón se vuelve una mano indicando que al pinchar en el logo te lleva a un link */
+}

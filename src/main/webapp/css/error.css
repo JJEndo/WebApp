@@ -1,0 +1,49 @@
+*{
+    margin: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    padding: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    box-sizing: border-box; 
+    font-family: "Open Sans", sans-serif; /* Tipografía de letra de toda la página */
+}
+
+body {
+	font-family: Arial, sans-serif;
+    background-image: url('../img/error.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.error-container {
+	background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para mejor legibilidad */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.error-container h1 {
+	font-size: 48px;
+	margin: 0;
+	color: #e74c3c;
+}
+.error-container p {
+	font-size: 18px;
+    margin: 10px 0 20px;
+    color: #333;
+}
+.error-container a {
+	display: inline-block;
+	margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.error-container a:hover {
+	background-color: #2980b9;
+	}

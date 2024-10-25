@@ -1,0 +1,252 @@
+:root{ /*Creamos variables para los colores*/
+    --primary-color: #f3e37c;
+    --primary-color-dark: #f3d34a;
+    --secondary-color: #fcf5c7;
+    --secondary-color-dark: #adf7b6;
+    --gray-color: #ccc;
+    --gray-color-dark:#333;
+}
+
+*{
+    margin: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    padding: 0; /*reseteamos para que el navegador no nos poga ninguno por defecto*/
+    box-sizing: border-box; 
+    font-family: "Open Sans", sans-serif; /* Tipografía de letra de toda la página */
+}
+
+/*
+body {
+    background-color: black; /* Color del fondo negro*/
+    /*color: white;  /* Color de las letras blanco *
+}  
+*/
+
+#container{
+    max-width: 1200px;
+    width: 100%;
+    height:  auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+}  
+body {
+    font-size: 16px;
+    background: var(--yellow);
+    background: -webkit-linear-gradient(to right, var(--primary-color),var(--primary-color-dark));
+    background: linear-gradient(to right, var(--secondary-color),var(--primary-color-dark));
+} 
+
+/* --------------------------------------- EL HEADER----------------------------------------------------------- */
+
+.brand_logo{
+    width: 150px;
+    cursor: pointer; /* El ratón se vuelve una mano indicando que al pinchar en el logo te lleva a un link */
+    margin: 0;
+}
+
+ 
+header{
+    width: 100%;
+    /*height: 100vh; /* Utilizo vh para que sea una página más responsive */
+    /* Añadimos la imagen pero con un poco de transparencia. Normalmente linear-gradient se usa para ir de un color
+    a otro (de arriba a abajo si se deja por defecto) y hacer una transición. Aquí usamos rgba que es como el código
+    de color rgb, pero la "a" (alpha) es la opacidad que va de 1 (opaco) a 0 (transparente). Con esto hago que la
+    imagen sea un poco transparente y más oscura, ya que en rgb (0,0,0) significa negro */
+    position: relative; 
+    background-image: /*linear-gradient(rgba(0,0,0,0.6),rgba(0, 0, 0, 0.6)),*/ url(/Proyecto/img/header.jpg); 
+    background-size: cover; /* Hace que se guarde la escala que tiene por defecto la imagen y su relación aspecto intrínseca */
+    background-position: center; /* Centramos la imagen */
+    padding: 10px 8%; /* Para arriba y abajo 10px y para derecha e izquierda 8% */
+    
+}
+
+
+.navbar{
+    display: flex; /* Hago que el contenido del nav sea horizontal en vez de vertical ajustándolas */
+    align-items: center; /* El contenido de las flexbox se centra */
+    /* El logo pasa a estar a la izquierda y los botones a la derecha porque hay un espacio entre ellos, ya que el logo
+    es un elemento y los botones como están en el mismo div, son otro elemento conjunto*/
+    justify-content: space-between;
+    padding: 10px 0; /* Para arriba y abajo 10px y para derecha e izquierda 0% */
+}
+
+
+.navbar_nav_items{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.nav_item {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.signin_button{
+    display: inline-flex; /* Hace que se alineen los elementos (verticalmente) del botón a la misma altura en el centro */
+    align-items: center; /* Alineamos horizontalmente el texto y la imagen en el centro del botón */
+    background: transparent; /* Hacemos que no tenga color el botón y que por defecto sea negro como el fondo */
+    border: 1px solid var(--primary-color-dark); /* Ahora el botón aunque es transparente tiene un borde que lo delimita */
+    padding: 7px 10px;
+    color: var(--primary-color-dark);
+    background-color: var(--gray-color-dark);
+}
+
+nav button{
+    border: 0;
+    outline: 0;
+    /*background: rgb(219, 0, 1); /* Color de los botones */
+    color: white; /* Color de la letra los botones*/
+    font-size: 12px; /* Tamaño de letra de los botones */
+    font-weight: bold;
+    border-radius: 4px; /* Redondea las esquinas para que sean cuadrados redondeados */
+    padding: 7px 20px;
+    margin-left: 8px; /* Hacemos que haya un espacio entre los botones */
+    cursor: pointer;
+} 
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}*/
+
+
+.loginWelcomeRow {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.loginWelcomeRow h1 {
+    max-width: 24rem;
+}
+
+.logo {
+    height: 8rem;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--primary-color);
+}
+
+
+#upload-container {
+	display: flex;
+	justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 32px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    align-items: normal;
+    align-self: center;
+    position: relative;
+    background: var(--white);
+    width: 100%;
+    max-width: 640px;
+    padding: 48px 32px;
+    border-radius: 32px;
+    height: fit-content;
+}
+
+
+#video-input {
+    margin-bottom: 20px;
+}
+
+#upload-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+#upload-btn:hover {
+    background-color: #0056b3;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar-fill {
+    height: 100%;
+    background-color: #007bff;
+}
+
+#upload-status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* --------------------------------FOOTER--------------------------------------------------------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    width: auto;
+    padding: 50px 15% 10px;
+    border-top: 2px solid #333;
+    color: #777;
+    margin-top: 50px;
+}
+
+
+footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+} 
+
+footer .columna{
+    flex-basis: 25%; /* Determinamos el tamaño de la caja de contenidos en un 25% cada columna, haciendo que se pongan de forma horizontal repartiéndose entre las cuatro el espacio */
+    flex-grow: 1
+}
+
+footer .columna a{
+    display: block; 
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+footer .columna a:hover {
+    text-decoration: underline;
+}
+.fila{
+    display: flex ;
+    align-items: flex-start; /* Así todos los elementos empiezan desde el mismo punto y no están centrados en su propia flexbox */
+    padding: 10px 0;
+} 

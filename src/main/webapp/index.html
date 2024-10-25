@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Equus Quagga</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"> <!--Vinculamos la hoja de estilo de css-->
+	<link rel="shortcut icon" type="image/jpg/png" href="img/index/logo_icon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conectamos con la webfonts de Google -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+	<!-- Cargamos el archivo topográfico para que sea utilizada en la web -->
+	<meta name="keywords" content="AACC, altas capacidades, documental, superdotadción" />
+	<meta name="description" content="Reconocer, apoyar y potenciar las altas capacidades de los niños" />
+	<meta name="author" content="Jonathan Endo" />
+	<meta name="theme-color" content="#000" />
+	<script src="js/index.js"></script>
+</head>
+
+<body>
+
+	<div id="container">
+		<!-- Encabezado -->
+		<header>
+			<nav class="navbar">
+
+				<div class="navbar_brand">
+					<img src="./img/eqLogo.png" alt="EQlogo" class="brand_logo" />
+				</div>
+				<div class="navbar_nav_items">
+					<div class="nav_item">
+						<div class="dropdown_container">
+							<select id="dropdown_select">
+								<option lang="es" label="Español">Español</option>
+								<option lang="en" label="English">English</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<a href="./cuenta.html">
+							<button class="signin_button">Iniciar sesión</button>
+						</a>
+					</div>
+				</div>
+			</nav>
+
+		</header>
+		<!-- Contenido-->
+		<main>
+			<div class="media-container">
+				<video id="videoPlayer" controls autoplay loop poster="./img/eqLogo.png">
+					<source src="videos/trailerEq.mp4" type="video/mp4">
+					<source src="videos/trailerEq.webm" type="video/webm">
+					<source src="videos/trailerEq.ogv" type="video/ogg">
+				</video>
+			</div>
+			<div class="botonesPlayer">
+				<button id="botonPlayPause">Play/Pause</button>
+				<button id="botonMute">Mute/Unmute</button>
+
+			</div>
+
+			<div class="contenido">
+				<h1>Equus <span class="text-secondary">Quagga</span></h1>
+				<h3>En la vasta sabana del potencial humano, algunas mentes destacan con un patrón único, como las rayas
+					de una cebra en la llanura africana.
+					Bienvenidos a "Equus Quagga". En este documental, exploraremos cómo estas rayas de genialidad
+					iluminan el paisaje de la educación y la creatividad infantil.
+					En este documental, nos sumergiremos en el mundo fascinante de las altas capacidades en los niños.
+					Desde los primeros destellos de brillantez hasta los desafíos de la educación y la integración
+					social,
+					exploraremos cómo estas mentes excepcionales navegan por un mundo diseñado para la norma, desafiando
+					expectativas y rompiendo barreras.
+					Prepárense para ser inspirados, maravillados y conmovidos por las historias de estos jóvenes
+					prodigios. Porque en sus rayas de genialidad, el futuro ya está tomando forma, y es más brillante
+					que nunca.</h3>
+				<p>¿Quieres verl todo el contenido? Registrate para comenzar la aventura.</p>
+			</div>
+			<div class="registrar">
+				<a href="./crearCuenta.html">
+					<button class="signin_button">Registrate</button>
+				</a>
+
+			</div>
+
+		</main>
+
+
+		<!-- Pie de página -->
+
+		<footer>
+
+			<h2>¿Preguntas? Escribe a info@eq.com</h2>
+
+			<div class="fila">
+				<div class="columna">
+					<a href="#faqs">Preguntas frecuentes</a>
+					<a href="#">Inversores</a>
+					<a href="/info-corporativa.html">Informacion corporativa</a>
+					<a href="/avisos-legales.html">Avisos legales</a>
+				</div>
+				<div class="columna">
+					<a href="#">Centro de ayuda</a>
+					<a href="#">Empleo</a>
+					<a href="/terminos-de-uso.html">Términos de uso</a>
+					<a href="mailto:infop@eq.com">Contáctanos</a>
+				</div>
+				<div class="columna">
+					<a href="/cuenta.html">Cuenta</a>
+					<a href="/privacidad.html">Privacidad</a>
+					<a href="https://fast.com/es/">Prueba de velocidad</a>
+				</div>
+				<div class="columna">
+					<a href="#">Zona de prensa</a>
+					<a href="#">Preferencias de cookies</a>
+					<a href="#">Garantía legal</a>
+				</div>
+			</div>
+			<p>&copy; 2024 Equus Quagga</p>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Equus Quagga subir video</title>
+	<link rel="stylesheet" type="text/css" href="css/subirVideo.css"><!--Vinculamos la hoja de estilo de css-->
+	<link rel="shortcut icon" type="image/png" href="img/index/logo_icon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Conectamos con la webfonts de Google -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+	<!-- Cargamos el archivo topográfico para que sea utilizada en la web -->
+	<meta name="keywords" content="AACC, altas capacidades, documental, superdotadción" />
+	<meta name="description" content="Reconocer, apoyar y potenciar las altas capacidades de los niños" />
+	<meta name="author" content="Jonathan Endo" />
+	<script src="js/subirVideo.js"></script>
+</head>
+
+<body>
+	<div id="container">
+
+		<div id="upload-container">
+
+			<form id="upload-form" action="GestionVideos" method="post" enctype="multipart/form-data">
+				<div class="loginWelcomeRow">
+					<a href="index.html" title="Logo">
+						<img src="img/eqLogo.png" alt="logo" class="logo">
+					</a>
+					<H1>Da de alta un nuevo video.</H1>
+					<p>Por favor, introduce la información.</p>
+				</div>
+				<label for="titulo"> Título del video *</label><br>
+				<input type="text" id="titulo" name="titulo" required><br><br>
+
+				<label for="director">Director</label><br>
+				<input type="text" id="director" name="director"><br><br>
+
+				<label for="musica">Música</label><br>
+				<input type="text" id="musica" name="musica"><br><br>
+
+				<label for="sinopsis">Sinopsis *</label><br>
+				<div class="form_floating">
+					<textarea name="sinopsis" class="form-control" placeholder="Escribe la sinpsis del video aquí."
+						id="floatingTextarea" required></textarea>
+				</div>
+				<label></label>
+				<input type="file" id="video-input" accept="video/*" name="video">
+				<input type="submit" id="upload-btn" value="Subir Video">
+			</form>
+			<div id="progress-bar">
+				<div id="progress-bar-fill"></div>
+			</div>
+			<div id="upload-status"></div>
+
+		</div>
+
+		<!-- Pie de página -->
+
+		<footer>
+
+			<h2>¿Preguntas? Escribe a info@eq.com</h2>
+
+			<div class="fila">
+				<div class="columna">
+					<a href="#faqs">Preguntas frecuentes</a>
+					<a href="#">Inversores</a>
+					<a href="/info-corporativa.html">Informacion corporativa</a>
+					<a href="/avisos-legales.html">Avisos legales</a>
+				</div>
+				<div class="columna">
+					<a href="#">Centro de ayuda</a>
+					<a href="#">Empleo</a>
+					<a href="/terminos-de-uso.html">Términos de uso</a>
+					<a href="mailto:infop@eq.com">Contáctanos</a>
+				</div>
+				<div class="columna">
+					<a href="/cuenta.html">Cuenta</a>
+					<a href="/privacidad.html">Privacidad</a>
+					<a href="https://fast.com/es/">Prueba de velocidad</a>
+				</div>
+				<div class="columna">
+					<a href="#">Zona de prensa</a>
+					<a href="#">Preferencias de cookies</a>
+					<a href="#">Garantía legal</a>
+				</div>
+			</div>
+			<p>&copy; 2024 Equus Quagga</p>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>
